@@ -14,7 +14,7 @@
 
         <section class="flex flex-col gap-y-8 my-2">
             <!-- Swiper main container -->
-            <div class="border break-container overflow-hidden flex flex-col gap-y-4" data-aos="fade-zoom-in" data-aos-easing="ease-in-back">
+            <div class=" break-container overflow-hidden flex flex-col gap-y-4" data-aos="fade-zoom-in" data-aos-easing="ease-in-back">
                 <!-- Row 1 - Scrolls Left -->
                 <div class="swiper swiper-about-gallery-row1">
                     <div class="swiper-wrapper flex items-center">

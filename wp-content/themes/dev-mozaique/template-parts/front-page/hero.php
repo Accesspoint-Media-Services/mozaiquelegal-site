@@ -6,9 +6,9 @@
         <div class="absolute inset-0 bg-white/40"></div>
     </div>
     <div class="container relative z-10" data-aos="fade-zoom-in">
-        <div class="flex flex-col gap-y-8 min-h-screen text-center items-center justify-center h-full"> 
+        <div class="flex flex-col gap-y-8 hero-screen text-center items-center justify-center h-full"> 
 
-            <h1 class="text-5xl md:text-7xl 2xl:text-[100px] text-dark !leading-normal" data-aos-duration="600" data-aos="fade-up" data-aos-easing="ease-in-back">
+            <h1 style="font-size: clamp(2.5rem, 6vw, 100px);" class="pt-10 text-dark !leading-normal" data-aos-duration="600" data-aos="fade-up" data-aos-easing="ease-in-back">
                 One <span class="bg-gradient-to-r from-[#6c3ad6] to-[#1c0b8c]/80 bg-clip-text text-transparent">Legal</span> Portal.<br>
                 Infi<span class="hidden">n</span><svg id="theN" class="inline-block -mb-1 mx-[2px] w-[0.5em] h-[0.5em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
                     <g id="tl">

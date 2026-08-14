@@ -3,7 +3,7 @@
 
         <?php if(has_post_thumbnail()) : ?>
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('full', ['class' => 'rounded-2xl w-full h-[225px] object-cover object-center']); ?>
+                <?php the_post_thumbnail('large', ['class' => 'rounded-2xl w-full h-[225px] 2xl:h-[265px]  object-cover object-center']); ?>
             </a>
         <?php endif; ?>  
 

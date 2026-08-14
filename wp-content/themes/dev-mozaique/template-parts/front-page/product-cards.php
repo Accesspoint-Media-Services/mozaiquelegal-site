@@ -48,6 +48,13 @@
                                 <div class="flex flex-col lg:w-1/2 gap-y-8">
                                     <?php if ($slide['select_product']) : ?>
                                         <?php foreach ($slide['select_product'] as $product) : ?>
+
+                                             <?php if ($product->post_title === 'Legal Aid Manager') : ?>
+                                                <div class="feature-buttons !bg-teal !text-primary">
+                                                    Available now
+                                                </div>
+                                            <?php endif; ?>
+                                            
                                             <h3 class="h2">
                                                 <?php echo $product->post_title; ?>
                                             </h3>
@@ -55,7 +62,7 @@
                                             <?php if ($slide['product_tags']) : ?>
                                                 <div class="flex flex-wrap gap-3">
                                                     <?php foreach ($slide['product_tags'] as $tag) : ?>
-                                                        <div class="footer-buttons"><?php echo $tag['product_tag']; ?></div>
+                                                        <div class="feature-buttons"><?php echo $tag['product_tag']; ?></div>
                                                     <?php endforeach; ?>
                                                 </div>
                                             <?php endif; ?>
@@ -107,7 +114,12 @@
                 </div>
 
                 <!-- Product title -->
-                <h3 class="h2 flex-wrap flex text-black w-2/3">
+                <h3 class="h2 flex-col flex text-black w-2/3">
+                    <?php if (!empty($slide['select_product']) && $slide['select_product'][0]->post_title === 'Legal Aid Manager') : ?>
+                        <div class="feature-buttons !text-xs mb-2 !bg-teal !text-primary">
+                            Available now
+                        </div>
+                    <?php endif; ?>
                     <a class="text-dark flex text-wrap break-words hover:text-teal" href="<?php echo esc_url($product_link); ?>">
                         <?php echo esc_html($product->post_title); ?>
                     </a>

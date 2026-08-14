@@ -10,13 +10,9 @@
 
             <?php $document = get_field('download_brochure', get_queried_object_id()); ?>
              <?php if ($document): ?>
-            <a class="group lg:inline-flex hidden  absolute right-0 top-0 flex-row gap-x-2  font-bold !text-dark" 
+           <a class="!hidden xl:!block xl:absolute xl:right-0 xlLtop-4 button" 
             href="<?php echo $document['url']; ?>" target="_blank">
                 Download our <?php the_title(); ?> brochure
-                <svg class="transition-transform mt-2 duration-300 group-hover:translate-x-2 group-hover:scale-110"  
-                xmlns="http://www.w3.org/2000/svg" width="39" height="13" viewBox="0 0 39 13" fill="none">
-                <path d="M0 6.18258H37M37 6.18258C37 6.18258 34.5347 7.34739 33.3636 8.69687C32.1926 10.0463 31.1818 12.0493 31.1818 12.0493M37 6.18258C37 6.18258 34.7109 5.2208 33.3636 3.6683C32.0164 2.1158 31.1818 0.315918 31.1818 0.315918" stroke="#130668" stroke-width="1.5"/>
-                </svg>
             </a>
             <?php endif; ?>
 

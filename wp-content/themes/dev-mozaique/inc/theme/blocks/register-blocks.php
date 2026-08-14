@@ -30,6 +30,9 @@ function apwp_register_acf_blocks()
 
     // review
     register_block_type(__DIR__ . '/review');
+
+    // callout block
+    register_block_type(__DIR__ . '/callout-block');
 }
 
 ?>

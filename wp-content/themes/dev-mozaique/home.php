@@ -8,68 +8,10 @@
             & <span class="bg-gradient-to-r from-[#635FD9] to-[#13DCF2] bg-clip-text text-transparent">everything else.</span>
         </h1>
 
-        <div class="flex flex-col gap-y-6 border-b-2 border-primary pb-10">
-            <?php 
-            $latest_post = get_posts(['numberposts' => 1])[0] ?? null;
-            if ($latest_post && has_post_thumbnail($latest_post->ID)) : ?>
-            <a href="<?php echo get_permalink($latest_post->ID); ?>">
-                <div class="featured-image">
-                    <?php echo get_the_post_thumbnail($latest_post->ID, 'full', [
-                        'class' => 'w-full h-[225px] md:h-[335px] lg:h-[435px] 2xl:h-[535px] rounded-3xl object-cover object-center'
-                    ]); ?>
-                </div>
-            </a>
-
-                <div class="container flex flex-wrap gap-4">
-
-                    <div class="feature-buttons items-center flex gap-x-2 !border-[#13DCF2]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                            <g clip-path="url(#clip0_2498_673)">
-                                <path d="M3.29332 13C3.02169 13 2.75406 12.9127 2.52438 12.7381C2.11695 12.4304 1.91722 11.9191 2.0031 11.4036L2.47046 8.56412C2.48843 8.4581 2.45448 8.35001 2.38058 8.27518L0.397327 6.26511C0.0378243 5.89926 -0.0899987 5.36296 0.0657856 4.86616C0.22157 4.36728 0.627008 4.01183 1.12432 3.937L3.86253 3.52334C3.96439 3.50879 4.05227 3.44019 4.0982 3.34458L5.32251 0.762868C5.5462 0.293089 5.99557 0.0020752 6.49888 0.0020752C7.00218 0.0020752 7.45156 0.293089 7.67525 0.762868L8.89955 3.34458C8.94549 3.44019 9.03337 3.50671 9.13523 3.52334L11.8734 3.937C12.3707 4.01183 12.7762 4.36936 12.932 4.86616C13.0878 5.36504 12.9599 5.89926 12.6004 6.26511L10.6192 8.27518C10.5453 8.35001 10.5113 8.4581 10.5293 8.56412L10.9967 11.4015C11.0825 11.917 10.8808 12.4284 10.4754 12.736C10.0679 13.0436 9.53867 13.0831 9.09329 12.8399L6.64468 11.4992C6.5528 11.4493 6.44495 11.4493 6.35308 11.4992L3.90447 12.8399C3.71074 12.946 3.50103 12.9979 3.29332 12.9979V13ZM6.49888 1.03933C6.44096 1.03933 6.29516 1.05596 6.21727 1.22018L4.99296 3.80188C4.80123 4.20514 4.43174 4.48369 4.00433 4.54813L1.26612 4.96178C1.09236 4.9888 1.03245 5.126 1.01247 5.1842C0.9945 5.2424 0.966538 5.38999 1.09236 5.51886L3.07362 7.52894C3.38319 7.84282 3.523 8.29389 3.4511 8.73664L2.98375 11.5761C2.95379 11.757 3.06164 11.8588 3.10757 11.8941C3.15551 11.9295 3.28133 12.0043 3.43712 11.9191L5.88573 10.5783C6.2672 10.3684 6.72457 10.3684 7.10604 10.5783L9.55465 11.9191C9.71043 12.0043 9.83825 11.9295 9.88419 11.8941C9.93213 11.8588 10.038 11.7549 10.008 11.5761L9.54067 8.73664C9.46877 8.29389 9.60857 7.84282 9.91814 7.52894L11.8994 5.51886C12.0252 5.39207 11.9973 5.2424 11.9793 5.1842C11.9613 5.126 11.8994 4.9888 11.7256 4.96178L8.98743 4.54813C8.56002 4.48369 8.19054 4.20514 7.9988 3.80188L6.7745 1.2181C6.6966 1.05388 6.5528 1.03725 6.49289 1.03725L6.49888 1.03933Z" fill="#13DCF2"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_2498_673">
-                                <rect width="13" height="13" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        Featured
-                    </div>
-                    
-                    <?php
-                    $categories = get_the_category($latest_post->ID);
-                    if ($categories) : ?>
-                        <?php foreach ($categories as $category) : ?>
-                            <div class="feature-buttons">
-                                <?php echo esc_html($category->name); ?>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    
-                    <!-- <?php $related_products = get_field('related_product', $latest_post->ID); ?>
-                    <?php if ($related_products) : ?>
-                        <?php foreach ($related_products as $product) : ?>
-                            <div class="feature-buttons">
-                                <?php echo esc_html($product->post_title); ?>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?> -->
-
-                    <div class="feature-buttons">
-                        <?php echo get_reading_time($latest_post->ID); ?> min read
-                    </div>
-                </div>
-
-                <a class="container" href="<?php echo get_permalink($latest_post->ID); ?>">
-                    <h2><?php echo get_the_title($latest_post->ID); ?></h2>
-                </a>
-            <?php endif; ?>
-        </div>
-
     </div>
 
     <!-- Filter and Search Section -->
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-4 pt-8 pb-10">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-4 pt-10 pb-12" data-aos="fade-zoom-in" data-aos-easing="ease-in-back">
         <div class="flex lg:flex-row flex-col items-center gap-6 w-full lg:w-2/3">
             
             <!-- Category Dropdown -->

@@ -1,8 +1,8 @@
 <?php 
-    $site_email = get_field('email_address', 'option');
-    $site_phone = get_field('phone_number', 'option');
-    $form_title = get_field('footer_form_title', 'option');
-    $form = get_field('form', 'option');
+$site_email = get_field('email_address', 'option');
+$site_phone = get_field('phone_number', 'option');
+$form_title = get_field('footer_form_title', 'option');
+$form       = get_field('form', 'option');
 ?>
 
 <section class="pt-20 lg:pt-28">
@@ -26,7 +26,7 @@
                 <!-- Always visible header - clickable to open -->
                 <label for="footer-toggle" class="block cursor-pointer">
                     <div id="footer-header" class="py-8 md:pt-10 px-4 transition-all duration-500 ease-out">
-                        <h2 class="text-white pr-20 !m-0 test-text background-red"><?php echo $form_title; ?></h2>
+                        <h2 class="text-white pr-20 !m-0"><?php echo $form_title; ?></h2>
                     </div>
                 </label>
 
@@ -35,7 +35,7 @@
                     <div class="flex flex-wrap md:flex-nowrap gap-8 py-14">
 
                         <div class="w-full md:w-1/3 flex flex-col gap-y-10 justify-center">
-                            <h2 class="text-white pr-28 md:pr-0 2xl:text-6xl test-text">
+                            <h2 class="text-white pr-28 md:pr-0 2xl:text-6xl">
                                 <?php echo $form_title; ?>
                             </h2>
 
@@ -62,8 +62,8 @@
                                 <?php endif; ?>
 
                                 <?php if( $site_phone ): 
-                                    $link_url    = $site_phone['url'];
-                                    $link_title  = $site_phone['title'];
+                                    $link_url = $site_phone['url'];
+                                    $link_title = $site_phone['title'];
                                     $link_target = $site_phone['target'] ? $site_phone['target'] : '_self';
                                 ?>
                                     <a class="text-xl flex gap-x-3 !text-white" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">

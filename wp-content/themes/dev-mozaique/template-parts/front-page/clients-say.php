@@ -19,11 +19,11 @@ $args = array(
 
 <section class="bg-[#0F0456]  h-full pt-20 pb-32 !overflow-x-hidden">
     <div class="container h-full">
-        <div class="flex flex-col xl:flex-row h-full gap-y-10 justify-between">
+        <div class="flex flex-col xl:flex-row h-full gap-y-10 gap-x-20 justify-between">
             <h2 class="h1 w-full xl:w-2/5 text-white flex items-center">
                 What our clients say
             </h2>
-            <div class="w-f xl:w-3/5">
+            <div class="xl:w-3/5">
             <?php $featured_query = new WP_Query($args); ?>
                 <?php if ( $featured_query->have_posts() ) { ?>
                     <div class="reviews-slider swiper">

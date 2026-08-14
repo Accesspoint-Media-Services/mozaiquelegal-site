@@ -64,27 +64,36 @@ window.addEventListener('load', function () {
 
     // contact dialog popup
     const popup_contact_triggers = document.querySelectorAll('a[href="#popup-contact-trigger"]');
-    if (popup_contact_triggers.length) {
-        const contact_dialog = document.querySelector(".contact-dialog");
-        if (contact_dialog) {
-            const popup_closeButton = contact_dialog.querySelector(".dialog-close");
-            
-            function openDialog(e) {
-                e.preventDefault();
-                contact_dialog.showModal();
-            }
-            function closeDialog() {
-                contact_dialog.close();
-            }
+    const contact_dialog = document.querySelector(".contact-dialog");
+
+    if (contact_dialog) {
+        const popup_closeButton = contact_dialog.querySelector(".dialog-close");
+        
+        function openDialog(e) {
+            if (e) e.preventDefault();
+            contact_dialog.showModal();
+        }
+        function closeDialog() {
+            contact_dialog.close();
+        }
+        
+        if (popup_contact_triggers.length) {
             popup_contact_triggers.forEach((popup_trigger) => {
                 popup_trigger.addEventListener("click", openDialog);
             });
-            popup_closeButton.addEventListener("click", closeDialog);
-            contact_dialog.addEventListener("click", (event) => {
-                if (event.target === contact_dialog) {
-                    closeDialog();
-                }
-            });
+        }
+        
+        popup_closeButton.addEventListener("click", closeDialog);
+        contact_dialog.addEventListener("click", (event) => {
+            if (event.target === contact_dialog) {
+                closeDialog();
+            }
+        });
+
+        // Check for custom URL parameter on page load
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('book-a-demo')) {
+            openDialog();
         }
     }
 

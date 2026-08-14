@@ -33,15 +33,10 @@
     <?php if ($demo_video) : ?>
         <div class="relative cursor-pointer group" onclick="Supademo.open('<?php echo esc_attr($demo_video); ?>')">
             <?php if (has_post_thumbnail()) : ?>
-                <div class="featured-image">
+                <div class="featured-image-product">
                     <?php the_post_thumbnail('full', [
-                        'class' => 'w-full !h-full max-h-[535px] rounded-3xl object-cover object-center'
+                        'class' => 'w-full !h-full !min-h-80 max-h-[535px] rounded-3xl object-cover object-center'
                     ]); ?>
-                </div>
-            <?php else : ?>
-                <div class="featured-image">
-                    <img src="" 
-                    class="w-full !h-full object-cover max-h-[535px] rounded-3xl object-center">
                 </div>
             <?php endif; ?>
             
@@ -62,15 +57,10 @@
         </div>
     <?php else : ?>        
         <?php if (has_post_thumbnail()) : ?>
-            <div class="featured-image ">
+            <div class="featured-image-product">
                 <?php the_post_thumbnail('full', [
-                    'class' => 'w-full !h-full max-h-[535px] rounded-3xl object-cover object-center'
+                    'class' => 'w-full !h-full min-h-80 max-h-[535px] rounded-3xl object-cover object-center'
                 ]); ?>
-            </div>
-        <?php else : ?>
-            <div class="featured-image">
-                <img src="" 
-                class="w-full !h-full object-cover max-h-[535px] rounded-3xl object-center">
             </div>
         <?php endif; ?>
   <?php endif; ?>

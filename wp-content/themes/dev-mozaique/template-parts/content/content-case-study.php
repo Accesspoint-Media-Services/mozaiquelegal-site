@@ -13,22 +13,16 @@
             </div>
 
 
-                <?php $cs_title = get_field('case_study_title'); ?>
-                <div class="h2 font-semibold text-dark">
+            <?php $cs_title = get_field('case_study_title'); ?>
+            <div class="h2 font-semibold text-dark">
                     <?php echo $cs_title; ?>
             </div>
             <?php 
             if (has_post_thumbnail()) : ?>
                 <div class="featured-image">
                     <?php the_post_thumbnail('full', [
-                        'class' => 'w-full !h-full max-h-[535px] rounded-3xl object-cover object-center'
+                        'class' => 'w-full h-[225px] md:h-[335px] lg:h-[435px] 2xl:h-[535px] rounded-3xl object-cover object-center'
                     ]); ?>
-                </div>
-            <?php 
-            else : ?>
-                <div class="featured-image">
-                    <img src="" 
-                    class="w-full !h-full object-cover max-h-[535px] rounded-3xl object-center">
                 </div>
             <?php 
             endif; ?>

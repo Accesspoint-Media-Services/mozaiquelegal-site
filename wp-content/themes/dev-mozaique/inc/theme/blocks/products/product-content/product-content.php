@@ -13,21 +13,24 @@
         <div class="flex flex-col xl:w-1/2 items-start">
             <?php $product_content_title = get_field('product_content_title'); ?>
             <?php $page_colour = get_field('page_colour', get_queried_object_id()); ?>
-            <div class="eyebrow-headings mb-4" style="color: <?php echo esc_attr($page_colour); ?>;">
+            <?php if ($product_content_title) : ?>
+                <div class="eyebrow-headings mb-4" style="color: <?php echo esc_attr($page_colour); ?>;">
                 <?php echo $product_content_title; ?>
             </div>
+            <?php endif; ?>
 
-            <div>
+            <div class="">
                 <?php echo get_field('product_content'); ?>
             </div>
 
             <div class="flex flex-col w-full product-content">
                 <InnerBlocks 
-                    allowedBlocks="<?php echo esc_attr(wp_json_encode(['acf/faqs'])); ?>"
-                    template="<?php echo esc_attr(wp_json_encode([
-                        ['acf/faqs'],
-                        ['acf/faqs'],
-                        ['acf/faqs']
+                    allowedBlocks="<?php echo esc_attr(wp_json_encode([
+                        'acf/faqs',
+                        'acf/callout-block',
+                        'core/paragraph',
+                        'core/list',
+                        'core/table',
                     ])); ?>"
                 />
             </div>

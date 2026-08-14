@@ -1,11 +1,10 @@
 <?php 
-    $footer_cs_args = array(
-        'post_type' => 'case-study',
-        'post_status' => 'publish',
-        'posts_per_page' => -1,
-        'order' => 'DESC'
-    ); 
-?>
+$footer_cs_args = array(
+    'post_type' => 'case-study',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'order' => 'DESC'
+); ?>
 
 <?php $cs_query = new WP_Query($footer_cs_args); ?>
 

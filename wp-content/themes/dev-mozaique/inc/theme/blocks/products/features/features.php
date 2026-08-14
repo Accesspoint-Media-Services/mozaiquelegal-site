@@ -23,7 +23,7 @@
                            data-index="<?php echo $index; ?>">
                             <img src="<?php echo esc_url($image['url']); ?>" 
                                 alt="<?php echo esc_attr($image['alt']); ?>"
-                                class="accordion-feature-image w-full h-auto max-h-96 object-center object-cover rounded-lg cursor-pointer"
+                                class="accordion-feature-image w-full rounded-lg cursor-pointer"
                                 data-index="<?php echo $index; ?>">
                         </a>
                         <?php $index++; ?>
@@ -32,7 +32,7 @@
                 </div>
                 
                 <!-- Accordions -->
-                <div class="lg:w-1/2 w-full flex flex-col gap-y-4">
+                <div class="lg:w-1/2 w-full flex flex-col gap-y-6">
                     <div class="hidden lg:flex lg:-mt-10 eyebrow-headings" style="color: <?php echo esc_attr($page_colour); ?>;">
                         <?php $feature_heading = get_field('feature_heading'); ?>
                         <?php echo $feature_heading; ?>
@@ -86,7 +86,7 @@
                            data-index="<?php echo $index; ?>">
                             <img src="<?php echo esc_url($image['url']); ?>" 
                                 alt="<?php echo esc_attr($image['alt']); ?>"
-                                class="accordion-feature-image w-full h-auto max-h-96 object-center object-cover rounded-lg cursor-pointer"
+                                class="accordion-feature-image w-full rounded-lg cursor-pointer"
                                 data-index="<?php echo $index; ?>">
                         </a>
                         <?php $index++; ?>
@@ -151,7 +151,7 @@
                            data-index="<?php echo $index; ?>">
                             <img src="<?php echo esc_url($image['url']); ?>" 
                                 alt="<?php echo esc_attr($image['alt']); ?>"
-                                class="accordion-feature-image w-full h-auto max-h-96 object-center object-cover rounded-lg cursor-pointer"
+                                class="accordion-feature-image w-full rounded-lg cursor-pointer"
                                 data-index="<?php echo $index; ?>">
                         </a>
                         <?php $index++; ?>
