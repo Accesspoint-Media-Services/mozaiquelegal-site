@@ -10,7 +10,7 @@
 
 <?php get_template_part('template-parts/footer/contact-footer'); ?>
 
-<footer id="colophon" class="site-footer bg-gradient-to-r from-[#635FD9] via-[#3F04BF] to-[#635FD9]" role="contentinfo">
+<footer id="colophon" class="site-footer test-class bg-gradient-to-r from-[#635FD9] via-[#3F04BF] to-[#635FD9]" role="contentinfo">
 	<?php do_action( 'apwp_footer' ); ?>
 
     <div class="rounded-t-3xl py-12 bg-white">
