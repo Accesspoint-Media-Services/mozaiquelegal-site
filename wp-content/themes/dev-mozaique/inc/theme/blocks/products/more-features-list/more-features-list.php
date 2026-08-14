@@ -51,31 +51,31 @@
                     <?php endwhile; ?>
                 </div>
             <?php endif; ?>
-            
         </div>
 
-    <?php if (is_singular('product') && get_the_title() === 'Legal Aid Manager') : ?>
-        <!-- Download CTA Card -->
-        <?php $document = get_field('download_brochure', get_queried_object_id()); ?>
-        <?php if ($document): ?>
-            <div class="mt-12">
-                <div class="rounded-2xl p-10 flex items-center gap-x-4 justify-between" style="border-radius: 20px;
-                    background: linear-gradient(179deg, #635FD9 0.57%, #13DCF2 99.4%);">
-                    <div class="space-y-4">
-                        <div class="eyebrow-headings !text-white">Find Out More</div>
-                        <h5 class="alt-heading text-white">Download our FREE product brochure</h5>
+        <?php if (get_field('display_large_cta')) :?>
+            <?php $document = get_field('download_brochure', get_queried_object_id()); ?>
+            <?php if ($document): ?>
+                <div class="mt-12">
+                    <div class="rounded-2xl p-10 flex items-center gap-x-4 justify-between" style="border-radius: 20px;
+                        background: linear-gradient(179deg, #635FD9 0.57%, #13DCF2 99.4%);">
+                        <div class="space-y-4">
+                            <div class="eyebrow-headings !text-white">Find Out More</div>
+                            <h5 class="alt-heading text-white">Download our FREE product brochure</h5>
+                        </div>
+                        <a href="<?php echo $document['url']; ?>" target="_blank" class="bg-white text-gray-900 
+                        px-6 py-2 rounded-full font-medium inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                            Download 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-1" width="17" height="11" viewBox="0 0 17 11" fill="none">
+                            <path d="M0 5.34131H15M15 5.34131C15 5.34131 12.6888 6.33404 11.5909 7.48417C10.4931 8.63429 9.54545 10.3413 9.54545 10.3413M15 5.34131C15 5.34131 12.8539 4.52161 11.5909 3.19845C10.3279 1.87529 9.54545 0.341309 9.54545 0.341309" stroke="#CB91F2" stroke-width="1.5"/>
+                            </svg>
+                        </a>
                     </div>
-                    <a href="<?php echo $document['url']; ?>" target="_blank" class="bg-white text-gray-900 
-                    px-6 py-2 rounded-full font-medium inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
-                        Download 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-1" width="17" height="11" viewBox="0 0 17 11" fill="none">
-                        <path d="M0 5.34131H15M15 5.34131C15 5.34131 12.6888 6.33404 11.5909 7.48417C10.4931 8.63429 9.54545 10.3413 9.54545 10.3413M15 5.34131C15 5.34131 12.8539 4.52161 11.5909 3.19845C10.3279 1.87529 9.54545 0.341309 9.54545 0.341309" stroke="#CB91F2" stroke-width="1.5"/>
-                        </svg>
-                    </a>
                 </div>
-            </div>
-        <?php endif; 
-        endif; ?>
-    </div>
+            <?php endif; endif; ?>
+        <?php endif;?>
+
+            
+        </div>
 
 </section>
