@@ -53,9 +53,9 @@
             <?php endif; ?>
         </div>
 
-        <?php if (get_field('display_large_cta')) :?>
+        <?php if (get_field('display_large_cta')) : ?>
             <?php $document = get_field('download_brochure', get_queried_object_id()); ?>
-            <?php if ($document): ?>
+            <?php if ($document) : ?>
                 <div class="mt-12">
                     <div class="rounded-2xl p-10 flex items-center gap-x-4 justify-between" style="border-radius: 20px;
                         background: linear-gradient(179deg, #635FD9 0.57%, #13DCF2 99.4%);">
@@ -72,8 +72,8 @@
                         </a>
                     </div>
                 </div>
-            <?php endif; endif; ?>
-        <?php endif;?>
+            <?php endif; ?>
+        <?php endif; ?>
 
             
         </div>
