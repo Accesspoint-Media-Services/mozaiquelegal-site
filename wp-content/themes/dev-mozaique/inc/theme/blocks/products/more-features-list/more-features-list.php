@@ -60,8 +60,8 @@
                     <div class="rounded-2xl p-10 flex items-center gap-x-4 justify-between" style="border-radius: 20px;
                         background: linear-gradient(179deg, #635FD9 0.57%, #13DCF2 99.4%);">
                         <div class="space-y-4">
-                            <div class="eyebrow-headings !text-white">Find Out More</div>
-                            <h5 class="alt-heading text-white">Download our FREE product brochure</h5>
+                            <div class="eyebrow-headings !text-white"><?php echo the_field('pre-title');?></div>
+                            <h5 class="alt-heading text-white"><?php echo the_field('download_title');?></h5>
                         </div>
                         <a href="<?php echo $document['url']; ?>" target="_blank" class="bg-white text-gray-900 
                         px-6 py-2 rounded-full font-medium inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
