@@ -1,0 +1,18 @@
+.case-study-column {
+    @apply flex flex-col gap-x-24 gap-y-10 lg:flex-row my-10;
+}
+
+.quotation {
+    @apply !m-0;
+    color: #130668;
+    font-family: Unbounded;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.quote-text p {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}

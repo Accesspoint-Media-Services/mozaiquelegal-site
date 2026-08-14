@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "case-study",
+    "textdomain": "mozaique",
+    "title": "Case Study Block",
+    "description": "",
+    "icon": "cover-image",
+    "keywords": [
+        "case-study",
+        "case-studies"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "case-study.php"
+    }
+}

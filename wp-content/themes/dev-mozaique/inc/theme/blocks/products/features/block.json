@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "features",
+    "textdomain": "mozaique",
+    "title": "Features",
+    "description": "",
+    "icon": "star-filled",
+    "keywords": [
+        "features",
+        "products",
+        "product"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "features.php"
+    }
+}

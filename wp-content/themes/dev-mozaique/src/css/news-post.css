@@ -1,0 +1,15 @@
+.toc-title {
+    @apply text-[#C0C0C0] px-8;
+}
+
+.toc-list li {
+    @apply my-3 px-8;
+}
+
+.toc-list a {
+    @apply text-[#090126] text-sm;
+}
+
+.toc-list li.active {
+    @apply border-l-4 border-teal;
+}

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "product-checklist",
+   "textdomain": "mozaique",
+    "title": "Product Checklist",
+    "description": "",
+    "icon": "saved",
+    "keywords": [
+        "checklist",
+        "products",
+        "product"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "product-checklist.php"
+    }
+}

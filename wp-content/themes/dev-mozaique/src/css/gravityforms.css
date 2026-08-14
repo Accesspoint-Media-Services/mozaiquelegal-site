@@ -1,0 +1,59 @@
+.gform_wrapper {
+  .gform_validation_errors {
+    .gform_submission_error {
+      @apply !text-xs;
+    }
+  }
+  form {
+    .gform-body {
+      .gform_fields {
+        @apply gap-4 lg:gap-8;
+        .gfield {
+          @apply relative;
+          .gfield_label {
+            @apply absolute -top-0.5 transition-all text-secondary bg-white left-3 text-xs lg:text-sm pointer-events-none h-8 sm:h-10 lg:h-12 m-0 flex items-center;
+            &.focused {
+              @apply -top-5 sm:-top-6 lg:-top-8 left-0 text-[0.8rem] md:text-xs opacity-50 bg-transparent;
+            }
+            .gfield_required {
+              @apply hidden;
+            }
+          }
+          .ginput_container {
+            > * {
+              @apply text-xs lg:text-sm leading-normal h-8 sm:h-10 lg:h-14 outline-0 border-0 border-b-2 border-primary/50 shadow-none rounded-none flex items-center;
+              &::placeholder {
+                @apply text-secondary/50;
+              }
+            }
+          }
+          &.gfield--type-consent {
+            .ginput_container {
+              @apply flex items-center;
+              > * {
+                @apply border-0 h-auto text-xs;
+              }
+              label {
+                a {
+                  @apply ml-1 no-underline;
+                }
+                .gfield_required {
+                  @apply hidden;
+                }
+              }
+              input {
+                @apply border-2 border-primary/50 w-5 h-5;
+              }
+            }
+          }
+          &.gfield_visibility_hidden {
+            @apply hidden;
+          }
+        }
+      }
+    }
+    .gform_button.button {
+    @apply !py-2.5 !px-6  md:!py-[0.8rem] !text-dark !leading-none !bg-teal !rounded-full !transition hover:!bg-secondary !outline-0  !min-h-0;
+    }
+  }
+}

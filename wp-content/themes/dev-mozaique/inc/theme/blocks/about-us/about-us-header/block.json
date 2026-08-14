@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "about-us-header",
+    "textdomain": "mozaique",
+    "title": "About Header",
+    "description": "",
+    "icon": "cover-image",
+    "keywords": [
+        "about",
+        "about us",
+        "header"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "about-us-header.php"
+    }
+}

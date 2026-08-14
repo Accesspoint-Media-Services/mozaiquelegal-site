@@ -1,0 +1,138 @@
+.font-body {
+    font-family: 'Manrope', sans-serif;
+    @apply text-dark;
+}
+
+.font-head {
+    font-family: 'Unbounded', sans-serif;
+    @apply text-dark;
+}
+
+body {
+    @apply font-body text-base text-dark;
+}
+
+.entry-content {
+    @apply text-dark;
+}
+
+h1 {
+    @apply font-head 2xl:leading-[75px] text-dark;
+}
+
+h2, h3, h4, h5, h6 {
+  @apply font-head leading-normal text-dark;
+}
+
+h1, .h1 {
+    @apply text-4xl md:text-5xl 2xl:text-6xl;
+}
+h2, .h2 {
+    @apply text-3xl md:text-4xl 2xl:text-5xl;
+}
+h3, .h3 {
+    @apply text-2xl md:text-3xl 2xl:text-4xl;
+}
+h4, .h4 {
+    @apply text-xl md:text-2xl 2xl:text-3xl;
+}
+h5, .h5 {
+    @apply text-lg md:text-xl 2xl:text-2xl;
+}
+h6, .h6 {
+    @apply text-base;
+}
+
+.has-sm-font-size {
+    @apply text-sm;
+}
+.has-base-font-size {
+    @apply text-base;
+}
+.has-lg-font-size {
+    @apply text-base md:text-lg;
+}
+.has-xl-font-size {
+    @apply text-lg md:text-xl 2xl:text-xl;
+}
+.has-2xl-font-size {
+    @apply text-xl md:text-2xl 2xl:text-2xl;
+}
+.has-3xl-font-size {
+    @apply text-2xl md:text-3xl 2xl:text-3xl;
+}
+.has-4xl-font-size {
+    @apply text-3xl md:text-4xl 2xl:text-4xl;
+}
+.has-5xl-font-size {
+    @apply text-4xl md:text-5xl 2xl:text-5xl;
+}
+.has-6xl-font-size {
+    @apply text-4xl md:text-5xl 2xl:text-6xl;
+}
+
+ul{
+    li{
+        @apply list-none marker:text-primary;
+    }
+}
+a{
+    @apply text-secondary hover:text-dark no-underline;
+}
+table{
+    @apply w-full border-collapse;
+    th,td{
+        @apply border border-light;
+    }
+}
+
+.entry-content {
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child {
+        @apply !mt-0;
+    }
+}
+
+.entry-content, .block-editor-block-list__layout {
+    p, ul, ol {
+        a {
+            @apply text-purple underline;
+
+            &:hover {
+                @apply no-underline;
+            }
+        }
+
+        @apply mb-8;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply mb-8;
+    }
+
+    ul:not(.block-editor-block-variation-picker__variations) {
+        li {
+            @apply list-disc list-inside;
+        }
+    }
+
+    ol {
+        li {
+            @apply list-decimal list-inside;
+        }
+    }
+}
+
+.alt-heading {
+    @apply !mb-0;
+}
+
+.post {
+    h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold font-body;
+    }
+}

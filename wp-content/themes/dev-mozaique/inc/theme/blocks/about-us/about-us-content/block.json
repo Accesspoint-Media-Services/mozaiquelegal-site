@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "about-us-content",
+    "textdomain": "mozaique",
+    "title": "About Content",
+    "description": "",
+    "icon": "cover-image",
+    "keywords": [
+        "about",
+        "about us",
+        "content"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "about-us-content.php"
+    }
+}

@@ -1,0 +1,57 @@
+/* Book a Demo Button Effects */
+.demo-btn-wrapper {
+    position: fixed;
+    bottom: 3%;
+    right: 2%;
+    z-index: 50;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.demo-btn-wrapper:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(99, 95, 217, 0.6));
+}
+
+/* Rotating text animation */
+.demo-btn-wrapper svg .rotating-text {
+    transform-origin: 55px 55px;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Pulse effect on the center logo */
+.demo-btn-wrapper svg .center-logo {
+    transform-origin: 80px 80px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.9; }
+}
+
+/* Glow ring animation */
+.demo-btn-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 15px rgba(99, 95, 217, 0.4);
+    animation: glow 2s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 15px rgba(99, 95, 217, 0.3); }
+    to { box-shadow: 0 0 20px rgba(99, 95, 217, 0.6); }
+}

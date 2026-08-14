@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "custom.css";
+@import "fonts.css";
+@import "buttons.css";
+@import "footer.css";
+@import "header.css";
+@import "gravityforms.css";
+@import "../../node_modules/swiper/swiper-bundle.css";
+@import "swipers";
+@import "entry-header";
+@import "dialogs";
+@import "news-post";
+@import "case-studies";
+@import "book-a-demo-sticky";

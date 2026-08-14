@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "overview",
+    "textdomain": "mozaique",
+    "title": "Overview",
+    "description": "",
+    "icon": "megaphone",
+    "keywords": [
+        "overview",
+        "products",
+        "product"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "overview.php"
+    }
+}

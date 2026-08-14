@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "review",
+    "textdomain": "",
+    "title": "Review",
+    "description": "",
+    "icon": "megaphone",
+    "keywords": [
+        "review",
+        "feedback",
+        "quote"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "review.php"
+    }
+}

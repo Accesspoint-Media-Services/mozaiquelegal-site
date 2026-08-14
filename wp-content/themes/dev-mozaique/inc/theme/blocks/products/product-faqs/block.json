@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "product-faqs",
+    "textdomain": "mozaique",
+    "title": "Product Faqs",
+    "description": "",
+    "icon": "cover-image",
+    "keywords": [
+        "faqs",
+        "products",
+        "product"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "product-faqs.php"
+    },
+        "supports": {
+        "jsx": true
+    }
+}

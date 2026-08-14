@@ -1,0 +1,29 @@
+#footer-toggle {
+    @apply opacity-0;
+}
+
+#footer-toggle:checked ~ .footer-contact-wrapper #footer-content {
+    max-height: 1000px;
+}
+
+#footer-toggle:checked ~ .footer-contact-wrapper #footer-cta-icon-open {
+    @apply opacity-0;
+}
+
+#footer-toggle:checked ~ .footer-contact-wrapper #footer-cta-icon-close {
+    @apply opacity-100;
+}
+
+#footer-toggle:checked ~ .footer-contact-wrapper #footer-header {
+    @apply opacity-0 !py-0 !my-0;
+}
+
+#footer-toggle:checked ~ .footer-contact-wrapper #footer-header h2 {
+    @apply hidden;
+}
+
+#footer-toggle:checked ~ .footer-contact-wrapper {
+    background: linear-gradient(180deg, #635FD9 0%, #3F04BF 100%);
+}
+
+

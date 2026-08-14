@@ -1,0 +1,21 @@
+dialog {
+  @apply overflow-x-hidden overflow-y-auto md:overflow-hidden fixed  top-0 left-0 flex items-center px-[calc(2vw+2vh)] py-[calc(3vw+3vh)] md:p-[calc(3vw+3vh)] max-h-screen min-h-full max-w-none w-screen sm:min-w-0 bg-transparent backdrop:bg-black/30 backdrop:backdrop-blur-sm invisible opacity-0 pointer-events-none transition-none;
+  &[open] {
+    @apply visible opacity-100 pointer-events-auto transition-all duration-500;
+  }
+  .dialog-wrap {
+    @apply overflow-visible relative flex flex-col min-w-full h-full min-h-full p-[calc(1.5vw+1.5vh)] md:p-[calc(5vw+5vh)] 
+    rounded-3xl border border-secondary/25 bg-white;
+
+    .dialog-content {
+      .dialog-content-header {
+        a {
+          @apply no-underline text-white hover:text-white;
+        }
+      }
+    }
+    .dialog-close {
+      @apply min-w-0 !p-3 absolute -top-5 -right-5 bg-secondary hover:bg-primary shadow aspect-square rounded-full leading-none flex font-bold cursor-pointer uppercase text-white hover:-rotate-180 transition-all duration-300 ease-in-out;
+    }
+  }
+}

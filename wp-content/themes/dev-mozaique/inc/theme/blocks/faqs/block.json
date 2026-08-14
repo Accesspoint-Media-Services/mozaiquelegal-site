@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "faqs",
+    "textdomain": "",
+    "title": "FAQs",
+    "description": "",
+    "icon": "megaphone",
+    "keywords": [
+        "faqs",
+        "faq",
+        "accordion"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "faqs.php"
+    }
+}

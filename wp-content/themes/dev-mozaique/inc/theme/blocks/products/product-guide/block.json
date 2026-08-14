@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "product-guide",
+   "textdomain": "mozaique",
+    "title": "Product Guide",
+    "description": "",
+    "icon": "desktop",
+    "keywords": [
+        "guide",
+        "products",
+        "product"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "product-guide.php"
+    }
+}

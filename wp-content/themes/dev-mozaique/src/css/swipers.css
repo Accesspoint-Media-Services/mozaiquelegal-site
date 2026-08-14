@@ -1,0 +1,282 @@
+/* SECTION CLIENTS SAY */
+
+
+.reviews-slider {
+    @apply flex w-full !relative !h-full rounded-2xl px-6 sm:px-10 xl:px-0 ;
+      .swiper-wrapper {
+        @apply !ease-linear flex rounded-2xl ;
+    }
+    .swiper-slide {
+        @apply transition-all  !opacity-100 flex h-auto rounded-2xl p-6 lg:p-14 duration-1000 ease-out;
+        transform-origin: center bottom;
+        width: 100% !important; 
+        flex-shrink: 0; 
+        &.swiper-slide-active {
+            @apply !bg-white;
+        }
+        &:nth-child(4n + 1) {
+            @apply bg-[#13DCF2]; 
+        }
+        &:nth-child(4n + 2) {
+            @apply bg-[#F2E750]; 
+        }
+        &:nth-child(4n + 3) {
+            @apply bg-secondary;
+        }
+        &:nth-child(4n + 4) {
+            @apply bg-teal; 
+        }
+    }
+    .swiper-pagination {
+        @apply -bottom-10 text-right;
+        .swiper-pagination-bullet {
+        @apply bg-white rounded-full h-1 w-2.5 transition-all duration-1000 opacity-50;
+        }
+        .swiper-pagination-bullet-active {
+        @apply w-8 opacity-100;
+        }
+    }
+}
+
+.swiper-front-page-cs {
+    @apply w-full !h-full !overflow-x-hidden lg:overflow-visible;
+    
+    .swiper-wrapper {
+        @apply flex items-center !h-full;
+    } 
+
+    .swiper-slide {
+        @apply flex mb-20 flex-col transition-all duration-500 !h-auto opacity-60 scale-95;
+        .case-study-title {
+            @apply hidden;
+        }
+    }
+    .swiper-slide-active {
+        @apply opacity-100 transition ease-in-out duration-[1000] h-auto scale-100;
+        .case-study-title {
+            @apply flex h4 text-start font-semibold text-dark hover:text-pink;
+        }
+    }
+    
+    .swiper-pagination {
+        @apply mt-40;
+        .swiper-pagination-bullet {
+        @apply bg-primary rounded-full h-1 w-2.5 transition-all duration-1000 opacity-50;
+        }
+        .swiper-pagination-bullet-active {
+        @apply w-8 opacity-100;
+        }
+    }
+}
+
+/* 
+swiper latest-news code 
+*/
+
+.swiper-latest-news {
+    @apply w-full flex ;
+    
+    .swiper-wrapper {
+        @apply flex ;
+    } 
+
+    .swiper-slide {
+        @apply flex mb-20 flex-col w-full !h-auto;
+    }
+
+}
+
+/* 
+swiper case studies code 
+*/
+
+.swiper-cs {
+    @apply w-full;
+    
+    .swiper-wrapper {
+        @apply flex ;
+    } 
+
+    .swiper-slide {
+        @apply flex mb-20 flex-col transition-all duration-500 !h-auto;
+    }
+
+    .swiper-pagination {
+        @apply mt-40;
+        .swiper-pagination-bullet {
+        @apply bg-primary rounded-full h-1 w-2.5 transition-all duration-1000 opacity-50;
+        }
+        .swiper-pagination-bullet-active {
+        @apply w-8 opacity-100;
+        }
+    }
+}
+
+/* 
+swiper products guide 
+*/
+
+.insights-left-column {
+    @apply relative z-10;
+    
+    &::before {
+        content: '';
+        @apply absolute top-0 bottom-0 right-0 bg-white;
+        left: -100vw;
+        width: calc(100% + 100vw);
+    }
+}
+
+.insights-left-column > * {
+    @apply relative z-10;
+}
+
+.swiper-product-guide {
+    @apply flex w-full pt-10 lg:pt-0;
+    .swiper-wrapper {
+        @apply flex w-full;
+    } 
+    .swiper-slide {
+        @apply flex flex-col h-auto px-10 lg:px-0;
+    } 
+    .swiper-pagination {
+        @apply top-0 bottom-auto;
+    }
+    .swiper-pagination-bullet-active {
+        @apply !bg-primary;
+    }
+}
+
+.guide-prev.swiper-button-disabled,
+.guide-next.swiper-button-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+}
+
+.guide-prev.swiper-button-disabled svg circle,
+.guide-prev.swiper-button-disabled svg path,
+.guide-next.swiper-button-disabled svg circle,
+.guide-next.swiper-button-disabled svg path {
+    @apply stroke-gray-500;
+}
+
+/* 
+swiper about us gallery 
+*/
+
+.swiper-about-gallery-row1,
+.swiper-about-gallery-row2 {
+    @apply w-full  cursor-pointer;
+
+    .swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+
+    .swiper-slide {
+        @apply w-auto;
+    }
+
+    .swiper-slide img {
+        @apply w-auto h-[300px] object-cover object-center rounded-2xl;
+    }
+}
+
+
+
+/* 
+stacked products  
+*/
+
+.stacked-products {
+    @apply hidden lg:block bg-white -mt-3 !rounded-3xl relative;
+    cursor: none;
+    
+    * {
+        cursor: none;
+    }
+}
+
+.product-card {
+    @apply sticky h-[35rem] w-full rounded-3xl;
+    transition: top 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card:nth-child(1) { top: 0rem; }
+.product-card:nth-child(2) { top: 8rem; }
+.product-card:nth-child(3) { top: 16rem; }
+.product-card:nth-child(n+4) { top: 24rem; }
+
+.product-card-inner {
+    @apply bg-white h-full rounded-3xl border-y border-primary/30 flex items-center py-10;
+}
+
+.product-card a {
+    @apply block w-full h-full;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 113px;
+    height: 113px;
+    background-color: #0DD9B3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+    a {
+        @apply !text-dark font-bold;
+        letter-spacing: 2.8px;
+    }
+}
+
+.custom-cursor.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+/* 
+swiper logos code 
+*/
+
+.swiper-client-logos {
+    @apply !w-full;
+
+    /* Fade edges */
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    .swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+    .swiper-slide {
+        @apply  !flex !gap-y-2 !flex-col items-center justify-center cursor-pointer;
+        
+        img {
+            @apply max-h-[80px] w-auto max-w-full object-contain ;
+        }
+
+        .case-study-logos {
+            @apply opacity-30;
+            filter: brightness(0) invert(12%) sepia(89%) saturate(2606%) hue-rotate(240deg) brightness(87%) contrast(115%);
+        }
+    }
+}
+
+

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "product-header",
+    "textdomain": "mozaique",
+    "title": "Product Header",
+    "description": "",
+    "icon": "cover-image",
+    "keywords": [
+        "header",
+        "products",
+        "product"
+    ],
+    "version": "1.0.0",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "product-header.php"
+    }
+}
