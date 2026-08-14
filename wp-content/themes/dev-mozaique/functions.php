@@ -6,6 +6,8 @@ require_once get_template_directory() . '/inc/theme/nocomments.php'; // --- Disa
 // require_once get_template_directory() . '/inc/theme/breadcrumbs.php'; // --- Yoast SEO  Breadcrumbs ---
 // add_filter('Yoast\WP\SEO\should_index_indexables', '__return_true');
 
+add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+
 
 /**
  * ACF BLOCKS
@@ -95,7 +97,7 @@ add_action('wp_ajax_nopriv_filter_posts', 'filter_posts_ajax');
 function get_reading_time() {
     $content = get_the_content();
     $word_count = str_word_count(strip_tags($content));
-    $reading_time = max(1, ceil($word_count / 150));
+    $reading_time = max(1, ceil($word_count / 140));
     return $reading_time;
 }
 
@@ -139,8 +141,8 @@ class Products_Menu_Walker extends Walker_Nav_Menu {
         // Only add title/description spans for products-menu children
         if ($is_products_child && $depth === 1) {
             // Mobile: plain text, Desktop: styled spans
-            $item_output .= '<span class="menu-item-text-mobile lg:hidden">' . apply_filters('the_title', $item->title, $item->ID) . '</span>';
-            $item_output .= '<span class="menu-item-title hidden lg:inline">' . apply_filters('the_title', $item->title, $item->ID) . '</span>';
+            $item_output .= '<span class="menu-item-title">' . apply_filters('the_title', $item->title, $item->ID) . '</span>';
+
             
             if (!empty($item->description)) {
                 $item_output .= '<span class="menu-item-description hidden lg:block">' . esc_html($item->description) . '</span>';
@@ -155,3 +157,58 @@ class Products_Menu_Walker extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
+
+// ACF Options page
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Global Options',
+        'menu_title'    => 'Global Options',
+        'menu_slug'     => 'global-options',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+}
+
+// /**
+//  * ============================================================
+//  * CACHE CONTROL & SAFARI FIX
+//  * ============================================================
+//  */
+
+// // 1. Force Safari/mobile to revalidate instead of serving stale cache
+// add_action( 'send_headers', function() {
+//     if ( is_admin() ) return;
+//     header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
+//     header( 'Pragma: no-cache' );
+//     header( 'Vary: Accept-Encoding' );
+// } );
+
+
+// // 2. Master cache clear function (Nginx Helper + bump asset version)
+// function my_clear_all_cache() {
+//     if ( class_exists( 'Nginx_Helper' ) ) {
+//         do_action( 'rt_nginx_helper_purge_all' );
+//     }
+//     update_option( 'my_cache_version', time() );
+// }
+
+
+// // 3. Auto-clear cache whenever a post is published or updated
+// add_action( 'save_post', function( $post_id ) {
+//     if ( wp_is_post_revision( $post_id ) ) return;
+//     my_clear_all_cache();
+// } );
+
+
+// // 4. Bust asset (CSS/JS) cache with a version stamp so Safari re-downloads them
+// add_filter( 'style_loader_src', 'my_bust_asset_cache', 10, 2 );
+// add_filter( 'script_loader_src', 'my_bust_asset_cache', 10, 2 );
+
+// function my_bust_asset_cache( $src, $handle ) {
+//     if ( is_admin() ) return $src;
+//     $version = get_option( 'my_cache_version', '1' );
+//     $src = remove_query_arg( 'ver', $src );
+//     $src = add_query_arg( 'ver', $version, $src );
+//     return $src;
+// }
